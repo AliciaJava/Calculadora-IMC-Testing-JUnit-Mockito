@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .mensaje-error {
+            color: red;
+            font-weight: bold;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+        <form action="/calcular" method="post">
+            <input type="number" name="peso" placeholder="Peso (kg)" step="0.1" required>
+            <input type="number" name="altura" placeholder="Altura (m)" step="0.01" required>
+            <button type="submit">Calcular</button>
+        </form>
+        <p style="color: red;" th:if="${mensajeError}" th:text="${mensajeError}"></p>
+        <p th:if="${resultado}">
+            Tu IMC es: <span th:text="${resultado}"></span><br>
+            Categoría: <span th:text="${categoria}"></span>
+        </p>
+        <h2>Historial de Operaciones</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Peso (kg)</th>
+                    <th>Altura (m)</th>
+                    <th>IMC</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="operacion : ${historial}">
+                    <td th:text="${operacion.peso}"></td>
+                    <td th:text="${operacion.altura}"></td>
+                    <td th:text="${operacion.imc}"></td>
+                    <td th:text="${operacion.categoria}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+    

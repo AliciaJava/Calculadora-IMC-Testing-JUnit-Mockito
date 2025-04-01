@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f4f8;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+        <form action="/calcular" method="post">
+            <input type="number" name="peso" placeholder="Peso (kg)" step="0.1" required>
+            <input type="number" name="altura" placeholder="Altura (m)" step="0.01" required>
+            <button type="submit">Calcular</button>
+        </form>
+
+        <!-- Mostrar mensaje de error si ocurre -->
+        <p style="color: red;" th:if="${mensaje}" th:text="${mensaje}"></p>
+
+        <!-- Mostrar el resultado del IMC -->
+        <p style="color: green;" th:if="${resultado}" th:text="'Tu IMC es: ' + ${resultado}"></p>
+    </div>
+</body>
+</html>
