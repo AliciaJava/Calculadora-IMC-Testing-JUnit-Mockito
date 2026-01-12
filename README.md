@@ -98,6 +98,18 @@ Proyecto con fines educativos y de aprendizaje.
 Uso libre para prácticas personales.
 
 ---
+## 📄 Licencia
+
+Imágenes
+
+1.RUN US CALCULADORA IMC
+<img width="1365" height="726" alt="RUN US" src="https://github.com/user-attachments/assets/ac6daa47-c9aa-46ce-88af-521a18e528ee" />
+2.LOCALHOST 
+<img width="1360" height="613" alt="LOCALHOST" src="https://github.com/user-attachments/assets/b1d6244e-96f5-4697-97bd-2758a1611541" />
+3.PRUEBA CALCULADORA
+<img width="1362" height="606" alt="PRUEBA CALCULADORA IMC" src="https://github.com/user-attachments/assets/1908a82c-61f4-4bc4-90ae-70b65aace11a" />
+4. RESULTADO
+<img width="1315" height="612" alt="RESULTADO" src="https://github.com/user-attachments/assets/99f3966c-999d-4319-bcdc-21b83cbf438c" />
 
 ## ✍️ Autor
 
